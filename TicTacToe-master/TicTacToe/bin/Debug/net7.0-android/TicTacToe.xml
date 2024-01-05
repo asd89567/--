@@ -1,0 +1,625 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicTacToe</name>
+    </assembly>
+    <members>
+        <member name="T:TicTacToe.Converters.EnumBoolConverter">
+            <summary>
+            This is used to convert an enumeration to a Boolean value.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.Converters.EnumBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            This is used by XAML to test if an enumeration is equal to its binding value.
+            </summary>
+            <param name="value">The value being bound to.</param>
+            <param name="targetType">The type of the enumerator.</param>
+            <param name="parameter">The value of the enumeration.</param>
+            <param name="culture">N/A</param>
+            <returns>Returns true of the value matches the parameter; otherwise, false.</returns>
+        </member>
+        <member name="M:TicTacToe.Converters.EnumBoolConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+        </member>
+        <member name="T:TicTacToe.CustomControls.SquareControl">
+            <summary>
+            Used to display none, X, or O inside a square for the tic-tac-toe board.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.CustomControls.SquareControl.#ctor">
+            <summary>
+            Initializes the user control
+            </summary>
+        </member>
+        <member name="F:TicTacToe.CustomControls.SquareControl.XorO_ValueProperty">
+            <summary>
+            Defines the bindable command to handle the click event.
+            </summary>
+        </member>
+        <member name="F:TicTacToe.CustomControls.SquareControl.XorO_CommandProperty">
+            <summary>
+            Defines the bindable property of the squares current value
+            </summary>
+        </member>
+        <member name="P:TicTacToe.CustomControls.SquareControl.XorO_Command">
+            <summary>
+            Passes the click event as a command
+            </summary>
+        </member>
+        <member name="P:TicTacToe.CustomControls.SquareControl.XorO_Value">
+            <summary>
+            The current value of the square
+            </summary>
+        </member>
+        <member name="T:TicTacToe.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:TicTacToe.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:TicTacToe.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:TicTacToe.ViewModels.AboutViewModel">
+            <summary>
+            This class is used by the about view to display information.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.AboutViewModel.UrlClick(System.String)">
+            <summary>
+            Handles the button "About" click.
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.AboutViewModel.Author">
+            <summary>
+            Get the author's name
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.AboutViewModel.Version">
+            <summary>
+            Return the current version number
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.AboutViewModel.urlClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.AboutViewModel.UrlClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.AboutViewModel.UrlClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TicTacToe.ViewModels.AboutViewModel.UrlClick(System.String)"/>.</summary>
+        </member>
+        <member name="T:TicTacToe.ViewModels.GamePlayViewModel">
+            <summary>
+            This view model is used to handle game play.
+            This includes the decision made by the computer.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.ApplyQueryAttributes(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This method is supposed to get the parameter arguments that are passed in from the main start page.
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._computerStarts">
+            <summary>
+            Indicates if the computer starts
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._gameOver">
+            <summary>
+            Indicates that the game is over
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._gridSize">
+            <summary>
+            The size of the tic-tac-toe board, the width and height needs to be the same
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._hasWinner">
+            <summary>
+            Indicates that the game has a winner, versus a tie
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._instructions">
+            <summary>
+            Brief description of next step that is displayed
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._topRowHeight">
+            <summary>
+            Used to hide the Title if the height is too small
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._twoPlayer">
+            <summary>
+            Indicates if it is a two player game; otherwise, one player
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._winningSelection">
+            <summary>
+            Indicates that a winning combination has been found
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._winningX1">
+            <summary>
+            Handles the location of the winning line (X1, Y1) - (X2 - Y2).
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._winningX2">
+            <summary>
+            Handles the location of the winning line (X1, Y1) - (X2 - Y2).
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._winningY1">
+            <summary>
+            Handles the location of the winning line (X1, Y1) - (X2 - Y2).
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel._winningY2">
+            <summary>
+            Handles the location of the winning line (X1, Y1) - (X2 - Y2).
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.LeftTopClick">
+            <summary>
+            [0] Handles the click event for the left side top square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CenterTopClick">
+            <summary>
+            [1] Handles the click event for the center top square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.RightTopClick">
+            <summary>
+            [2] Handles the click event for the right side top square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.LeftMiddleClick">
+            <summary>
+            [3] Handles the click event for the left side middle square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CenterMiddleClick">
+            <summary>
+            [4] Handles the click event for the center square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.RightMiddleClick">
+            <summary>
+            [5] Handles the click event for the right side middle square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.LeftBottomClick">
+            <summary>
+            [6] Handles the click event for the left side bottom square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CenterBottomClick">
+            <summary>
+            [7] Handles the click event for the center bottom square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.RightBottomClick">
+            <summary>
+            [8] Handles the click event for the right side bottom square
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.PlayAgainClick">
+            <summary>
+            PlayAgainClick to default values
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.QuitClick">
+            <summary>
+            Exit the program
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftTopChoice">
+            <summary>
+            [0] The current value of the left side top square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterTopChoice">
+            <summary>
+            [1] The current value of the center top square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightTopChoice">
+            <summary>
+            [2] The current value of the right side top square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftMiddleChoice">
+            <summary>
+            [3] The current value of the left side middle square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterMiddleChoice">
+            <summary>
+            [4] The current value of the center square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightMiddleChoice">
+            <summary>
+            [5] The current value of the right side middle square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftBottomChoice">
+            <summary>
+            [6] The current value of the left side bottom square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterBottomChoice">
+            <summary>
+            [7] The current value of the center bottom square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightBottomChoice">
+            <summary>
+            [8] The current value of the right side bottom square
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.IsComputersTurn">
+            <summary>
+            Indicates if the current turn belongs to the computer
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckBestChoice(System.Int32[],TicTacToe.Enums.XorO)">
+            <summary>
+            Used by the computer to find the best square to choice for its next move.
+            </summary>
+            <param name="threeChoices">An integer array with three choices.</param>
+            <param name="piece">Indicates if the computer game piece is an X or O.</param>
+            <returns>An integer into the array of the three choices; otherwise, -1 to indicate a  good choice was not found.</returns>
+            <remarks>
+             0 | 1 | 2
+             ---------
+             3 | 4 | 5
+             ---------
+             6 | 7 | 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckIfComputerPlay">
+            <summary>
+            Check if computer should play next
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckForBestBlockingMove(TicTacToe.Enums.XorO)">
+            <summary>
+            Check for best blocking move
+            </summary>
+            <returns>If found, returns an integer value representing the square; otherwise, -1</returns>
+            <remarks>
+            0 1 2
+            3 4 5
+            6 7 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckForSpecialBlockingMove(TicTacToe.Enums.XorO,TicTacToe.Enums.XorO)">
+            <summary>
+            Check for best blocking move
+            </summary>
+            <returns>If found, returns an integer value representing the square; otherwise, -1</returns>
+            <remarks>
+            0 1 2
+            3 4 5
+            6 7 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.PickRandomCorner">
+            <summary>
+            Picks a random corner to play in.
+            </summary>
+            <returns>If found, returns an integer value representing the square; otherwise, -1</returns>
+            <remarks>
+            0 1 2
+            3 4 5
+            6 7 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckIfWinnerOrDraw">
+            <summary>
+            Check if there is a winner of the game is a tie
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.CheckShouldPlay(System.Int32[],TicTacToe.Enums.XorO)">
+            <summary>
+            Used by the computer to identify that there is one play away from winning.
+            </summary>
+            <param name="threeInARow">A winning combination of moves.</param>
+            <param name="piece">Indicates if the game piece is an X or O.</param>
+            <returns>An integer representing the winning move into the array of the three choices; otherwise, -1 to indicate a winning choice was not found.</returns>
+            <remarks>
+             0 | 1 | 2
+             ---------
+             3 | 4 | 5
+             ---------
+             6 | 7 | 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.LetComputerPlayTurn">
+            <summary>
+            Play as a the computer
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.PickSquare(TicTacToe.Enums.XorO)">
+            <summary>
+            Handles the selection of a square
+            </summary>
+            <param name="currentChoice">The current value of the square</param>
+            <returns>The new value of the square.</returns>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.Play(System.Int32)">
+            <summary>
+            Sets the square based on the computer's choice.
+            </summary>
+            <param name="choice">An integer that represents a tic-tac-toe square position.</param>
+            <remarks>
+             0 | 1 | 2
+             ---------
+             3 | 4 | 5
+             ---------
+             6 | 7 | 8
+            </remarks>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.SizeChanged(System.Double,System.Double)">
+            <summary>
+            Handle the for resize event to re-calculate the size of the tic-tac-toe board
+            </summary>
+            <param name="width">Width of the form.</param>
+            <param name="height">Height of the form.</param>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.UpdateInstructions">
+            <summary>
+            Update the instructions for the next step.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.GamePlayViewModel.UpdateWinningLine">
+            <summary>
+            Update the position of the winning line.
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.ComputerStarts">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._computerStarts"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.GameOver">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._gameOver"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.GridSize">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._gridSize"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.HasWinner">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._hasWinner"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.Instructions">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._instructions"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.TopRowHeight">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._topRowHeight"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.TwoPlayer">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._twoPlayer"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.WinningSelection">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._winningSelection"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.WinningX1">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._winningX1"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.WinningX2">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._winningX2"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.WinningY1">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._winningY1"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.WinningY2">
+            <inheritdoc cref="F:TicTacToe.ViewModels.GamePlayViewModel._winningY2"/>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.leftTopClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.LeftTopClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftTopClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.LeftTopClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.centerTopClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.CenterTopClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterTopClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.CenterTopClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.rightTopClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.RightTopClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightTopClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.RightTopClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.leftMiddleClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.LeftMiddleClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftMiddleClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.LeftMiddleClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.centerMiddleClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.CenterMiddleClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterMiddleClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.CenterMiddleClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.rightMiddleClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.RightMiddleClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightMiddleClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.RightMiddleClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.leftBottomClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.LeftBottomClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.LeftBottomClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.LeftBottomClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.centerBottomClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.CenterBottomClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.CenterBottomClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.CenterBottomClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.rightBottomClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.RightBottomClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.RightBottomClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.RightBottomClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.playAgainClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.PlayAgainClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.PlayAgainClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.PlayAgainClick"/>.</summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.GamePlayViewModel.quitClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.GamePlayViewModel.QuitClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.GamePlayViewModel.QuitClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.GamePlayViewModel.QuitClick"/>.</summary>
+        </member>
+        <member name="T:TicTacToe.ViewModels.MainPageViewModel">
+            <summary>
+            This is the main page or start page
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.MainPageViewModel._twoPlayer">
+            <summary>
+            Indicates if the computer starts
+            </summary>
+        </member>
+        <member name="F:TicTacToe.ViewModels.MainPageViewModel._computerStarts">
+            <summary>
+            Indicates if the game has two players; otherwise, one player.
+            </summary>
+        </member>
+        <member name="M:TicTacToe.ViewModels.MainPageViewModel.StartClick">
+            <summary>
+            Navigate to the about view
+            </summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.MainPageViewModel.TwoPlayer">
+            <inheritdoc cref="F:TicTacToe.ViewModels.MainPageViewModel._twoPlayer"/>
+        </member>
+        <member name="P:TicTacToe.ViewModels.MainPageViewModel.ComputerStarts">
+            <inheritdoc cref="F:TicTacToe.ViewModels.MainPageViewModel._computerStarts"/>
+        </member>
+        <member name="F:TicTacToe.ViewModels.MainPageViewModel.startClickCommand">
+            <summary>The backing field for <see cref="P:TicTacToe.ViewModels.MainPageViewModel.StartClickCommand"/>.</summary>
+        </member>
+        <member name="P:TicTacToe.ViewModels.MainPageViewModel.StartClickCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TicTacToe.ViewModels.MainPageViewModel.StartClick"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+    </members>
+</doc>
